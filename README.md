@@ -15,21 +15,21 @@ Nella repository sono presenti 5 file oltre al README.md:
 
 Come eseguire i programmi:
 
-1) Tramonti.py:
+1) _Tramonti.py_:
    Per prima cosa è necessario cambiare il pathname del file Modulo.py nell'import, mettendo il 	perorso effettivo dopo aver scaricato il file.
    
    Per eseguire il programma per prima cosa si deve scegliere la stella sorgente dei 		fotoni, le opzioni possibili sono:
    
-   - Sole: da terminale usare il comando      python3 Tramonti.py --main
-   - Antares: da terminale usare il comando      python3 Tramonti.py --antares
-   - Sirius: da terminale usare il comando      python3 Tramonti.py --sirius
-   - Rigel: da terminale usare il comando      python3 Tramonti.py --rigel
+   - Sole: da terminale usare il comando      _python3_ _Tramonti.py_ _--main_
+   - Antares: da terminale usare il comando      _python3_ _Tramonti.py_ _--antares_
+   - Sirius: da terminale usare il comando      _python3_ _Tramonti.py_ _--sirius_
+   - Rigel: da terminale usare il comando      _python3_ _Tramonti.py_ _--rigel_
    
-   Per ulteriori informazioni è sufficiente eseguire il comando:   python3 Tramonti.py --help
+   Per ulteriori informazioni è sufficiente eseguire il comando:   _python3_ _Tramonti.py_ _--help_
    
-2) StellaX.py:
+2) _StellaX.py_:
 
    Come per il file precendente, cambiare il pathname nell'import del file Modulo.py.
    Per eseguire questo programma è anche necessario cambiare il pathname del file di dati che viene importato dopo averlo scaricato, inserendo quello effettivo.
-   Successivamente è sufficiente runnare il programma    python3 StellaX.py
+   Successivamente è sufficiente runnare il programma:    _python3_ _StellaX.py_
 
