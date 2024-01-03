@@ -6,7 +6,7 @@ import matplotlib.colors as colors
 import sys
 import pandas as pd
 
-sys.path.append('/home/greta/Desktop/uni/Computazionali/Progetto/Modulo.py')
+sys.path.append('/home/greta/Desktop/uni/Computazionali/MCF2023_Project/Modulo.py')
 sys
 
 import Modulo as md
@@ -14,7 +14,7 @@ import Modulo as md
 ####################################################################################################
 #Import dei dati dal file csv
 
-data = pd.read_csv('/home/greta/Desktop/uni/Computazionali/Progetto/202301/observed_starX.csv')
+data = pd.read_csv('/home/greta/Desktop/uni/Computazionali/MCF2023_Project/observed_starX.csv')
 data
 
 theta = np.radians(45)

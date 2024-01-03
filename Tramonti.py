@@ -8,7 +8,7 @@ import argparse
 import numpy.random as random
 import scipy.integrate as integrate
 
-sys.path.append('/home/greta/Desktop/uni/Computazionali/Progetto/Modulo.py')
+sys.path.append('/home/greta/Desktop/uni/Computazionali/MCF2023_Project/Modulo.py')
 sys
 
 import Modulo as md
