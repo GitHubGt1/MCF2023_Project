@@ -302,20 +302,17 @@ def main():
         ################################################################################################
         #Studio del flusso integrato in funzione dell'angolo del sole rispetto allo zenith
 
-        theta = np.radians(np.linspace(0, 90, 50))
+        theta = np.radians(np.linspace(0, 90, 100))
         valore=500*10**(-9)                                                                          
-        simpson_int = np.empty(50)
-        for i in range(0, 50):
+        simpson_int = np.empty(100)
+        for i in range(0, 100):
             X_max = scipy.optimize.minimize(md.N_obs_opp, x0=valore, args=(t, theta[i]))        
             norm_ = md.N_obs(X_max.x[0], t, theta[i])
-            y_base = md.N_obs_norm(l_emesse*10**(-9), t, theta[i], norm_)
-            value = random.uniform(low = 0, high = np.max(y_base), size = len(l_emesse))
+            l3 = np.random.uniform(low = 380, high = 750, size = n_sample)
+            y_base = md.N_obs_norm(l3*10**(-9), t, theta[i], norm_)
+            value = random.uniform(low = 0, high = np.max(y_base), size = n_sample)
             mask = value <= y_base
-            l_int = l_emesse[mask]
-            y = y_base[mask]
-            ind = np.argsort(l_int)
-            l_int = l_int[ind]
-            y = y[ind]
+            l_int = l3[mask]
             hist = np.histogram(l_int, bins = 100)
             bincenters = (hist[1][:-1] + hist[1][1:])/2
             simpson_int[i] = integrate.simpson(hist[0], bincenters)
@@ -502,20 +499,17 @@ def main():
         ################################################################################################
         #Studio del flusso integrato in funzione dell'angolo di Antares rispetto allo zenith
 
-        theta = np.radians(np.linspace(0, 90, 50))
+        theta = np.radians(np.linspace(0, 90, 100))
         valore=500*10**(-9)                                                                          
-        simpson_int = np.empty(50)
-        for i in range(0, 50):
+        simpson_int = np.empty(100)
+        for i in range(0, 100):
             X_max = scipy.optimize.minimize(md.N_obs_opp, x0=valore, args=(t, theta[i]))        
             norm_ = md.N_obs(X_max.x[0], t, theta[i])
-            y_base = md.N_obs_norm(l_emesse*10**(-9), t, theta[i], norm_)
-            value = random.uniform(low = 0, high = np.max(y_base), size = len(l_emesse))
+            l3 = np.random.uniform(low = 380, high = 750, size = n_sample)
+            y_base = md.N_obs_norm(l3*10**(-9), t, theta[i], norm_)
+            value = random.uniform(low = 0, high = np.max(y_base), size = n_sample)
             mask = value <= y_base
-            l_int = l_emesse[mask]
-            y = y_base[mask]
-            ind = np.argsort(l_int)
-            l_int = l_int[ind]
-            y = y[ind]
+            l_int = l3[mask]
             hist = np.histogram(l_int, bins = 100)
             bincenters = (hist[1][:-1] + hist[1][1:])/2
             simpson_int[i] = integrate.simpson(hist[0], bincenters)
@@ -701,20 +695,17 @@ def main():
         ################################################################################################
         #Studio del flusso integrato in funzione dell'angolo di Sirius rispetto allo zenith
 
-        theta = np.radians(np.linspace(0, 90, 50))
+        theta = np.radians(np.linspace(0, 90, 100))
         valore=500*10**(-9)                                                                          
-        simpson_int = np.empty(50)
-        for i in range(0, 50):
+        simpson_int = np.empty(100)
+        for i in range(0, 100):
             X_max = scipy.optimize.minimize(md.N_obs_opp, x0=valore, args=(t, theta[i]))        
             norm_ = md.N_obs(X_max.x[0], t, theta[i])
-            y_base = md.N_obs_norm(l_emesse*10**(-9), t, theta[i], norm_)
-            value = random.uniform(low = 0, high = np.max(y_base), size = len(l_emesse))
+            l3 = np.random.uniform(low = 380, high = 750, size = n_sample)
+            y_base = md.N_obs_norm(l3*10**(-9), t, theta[i], norm_)
+            value = random.uniform(low = 0, high = np.max(y_base), size = n_sample)
             mask = value <= y_base
-            l_int = l_emesse[mask]
-            y = y_base[mask]
-            ind = np.argsort(l_int)
-            l_int = l_int[ind]
-            y = y[ind]
+            l_int = l3[mask]
             hist = np.histogram(l_int, bins = 100)
             bincenters = (hist[1][:-1] + hist[1][1:])/2
             simpson_int[i] = integrate.simpson(hist[0], bincenters)
@@ -901,20 +892,17 @@ def main():
         ################################################################################################
         #Studio del flusso integrato in funzione dell'angolo di Rigel rispetto allo zenith
 
-        theta = np.radians(np.linspace(0, 90, 50))
+        theta = np.radians(np.linspace(0, 90, 100))
         valore=500*10**(-9)                                                                          
-        simpson_int = np.empty(50)
-        for i in range(0, 50):
+        simpson_int = np.empty(100)
+        for i in range(0, 100):
             X_max = scipy.optimize.minimize(md.N_obs_opp, x0=valore, args=(t, theta[i]))        
             norm_ = md.N_obs(X_max.x[0], t, theta[i])
-            y_base = md.N_obs_norm(l_emesse*10**(-9), t, theta[i], norm_)
-            value = random.uniform(low = 0, high = np.max(y_base), size = len(l_emesse))
+            l3 = np.random.uniform(low = 380, high = 750, size = n_sample)
+            y_base = md.N_obs_norm(l3*10**(-9), t, theta[i], norm_)
+            value = random.uniform(low = 0, high = np.max(y_base), size = n_sample)
             mask = value <= y_base
-            l_int = l_emesse[mask]
-            y = y_base[mask]
-            ind = np.argsort(l_int)
-            l_int = l_int[ind]
-            y = y[ind]
+            l_int = l3[mask]
             hist = np.histogram(l_int, bins = 100)
             bincenters = (hist[1][:-1] + hist[1][1:])/2
             simpson_int[i] = integrate.simpson(hist[0], bincenters)
