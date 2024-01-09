@@ -36,6 +36,8 @@ photons = photons[filtro]
 
 sigma_y = np.sqrt(photons)
 
+
+
 ###################################################################################################
 #Fit con la distribuzione adattata con lo scattering di Rayleigh
 p0 = np.array([8*10**3, theta, 300], dtype = 'float64')

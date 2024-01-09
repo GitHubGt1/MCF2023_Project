@@ -46,28 +46,35 @@ def massa_d_aria(theta, S_z, R):
     """
     rad = np.power(R* np.cos(theta),2)+2*R*S_z+ S_z**2
     return np.sqrt(rad) - R*np.cos(theta)
+    
+def scattering(l, theta):
+    """
+        Funzione che descrive la probabilità per un fotone di lunghezza d'onda l 
+        proveniente da una stella ad un angolo zenitale theta di essere osservato a terra 
+        tenendo conto delle possibili interazioni per scattering di Rayleigh
+    """
+    return np.exp(-coeff_rayleigh(l,n,N)*massa_d_aria(theta,S_z,R_t))
 
 def N_obs(l,t, theta):
     """
-    Funzione che descrive il numero di fotoni osservati in funzione della lunghezza d'onda
-    Tenendo conto dello scattering di Rayleigh
+        Funzione che descrive il numero di fotoni osservati in funzione della lunghezza d'onda
+        Tenendo conto dello scattering di Rayleigh
 
-    l: lunghezze d'onda
-    n_i: numero iniziale dei fotoni alla lunghezza l
-    theta: angolo zenitale della sorgente
+        l: lunghezze d'onda
+        n_i: numero iniziale dei fotoni alla lunghezza l
+        theta: angolo zenitale della sorgente
     """
     return corpo_nero(l,t)*np.exp(-coeff_rayleigh(l,n,N)*massa_d_aria(theta,S_z,R_t))
 
-def N_obs_opp(l, t ,theta):
-     return -N_obs(l, t, theta)
-
-def N_obs_norm(l, t, theta,n):
-    return N_obs(l, t, theta)/n
-
-def N_obs_inv(l, n_obs, theta):
-     n_obs*np.exp(coeff_rayleigh(l,n,N)*massa_d_aria(theta,S_z,R_t))
 
 def N_obs_opt(l, t, theta, A):
+    """
+        Funzione con cui eseguire il fit,tenendo conto dello scattering di Rayleigh, per una stella a temperatura ignota t
+        con angolo zenitale theta che emette fotoni con lunghezze d'onda l secondo lo spettro del corpo nero. 
+        
+        La costante di scala A è necessaria in quanto il numero di fotoni emesso dalla stella (dati)
+        non corrisponde a quello nominale per lo spettro del corpo nero e quuindi la distribuzione deve essere riscalata
+    """
     X_max = optimize.minimize(corpo_nero_opp, x0=400*10**(-9), args=(t))        
     n = corpo_nero(X_max.x[0], t) 
     return A*N_obs(l, t, theta)/n
